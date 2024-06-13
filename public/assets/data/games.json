@@ -1,0 +1,12 @@
+[
+	{
+		"id": 1,
+		"src": "/assets/rocket-league.webp",
+		"name": "Rocket League"
+	},
+	{
+		"id": 2,
+		"src": "/assets/valorant.webp",
+		"name": "Valorant"
+	}
+]
