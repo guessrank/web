@@ -1,7 +1,8 @@
+import { CardProps } from '@/types/interfaces'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Card({ width, height, src, alt, gameId }: any) {
+export default function Card({ width, height, src, alt, gameId }: CardProps) {
 	return (
 		<div className='flex flex-col gap-2 w-full'>
 			<Link href={`/game/${gameId}`}>
