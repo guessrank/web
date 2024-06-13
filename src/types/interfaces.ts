@@ -13,3 +13,10 @@ export interface GameProps {
 	name: string
 	src: string
 }
+
+export interface LogoProps {
+	width: number
+	height: number
+	stroke?: string
+	fill?: string
+}
