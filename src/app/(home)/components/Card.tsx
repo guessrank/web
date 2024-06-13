@@ -2,16 +2,17 @@ import { CardProps } from '@/types/interfaces'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Card({ width, height, src, alt, gameId }: CardProps) {
+export default function Card({ src, alt, gameId }: CardProps) {
 	return (
-		<div className='flex flex-col gap-2 w-full'>
-			<Link href={`/game/${gameId}`}>
+		<div className='flex'>
+			<Link
+				href={`/game/${gameId}`}
+				className='relative w-screen max-w-52 min-h-64'>
 				<Image
 					src={src}
-					width={width}
-					height={height}
 					alt={alt}
-					className='object-cover rounded-lg'
+					fill
+					className='object-cover rounded-lg absolute inset-0'
 				/>
 			</Link>
 		</div>

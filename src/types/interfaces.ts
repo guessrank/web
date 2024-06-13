@@ -3,8 +3,6 @@ export interface ReactNodeProps {
 }
 
 export interface CardProps {
-	width: number
-	height: number
 	src: string
 	alt: string
 	gameId: string

@@ -8,12 +8,10 @@ export default async function Cards() {
 	})) as GameProps[]
 
 	return (
-		<div className='flex gap-4'>
+		<div className='flex flex-wrap gap-4 w-full justify-center sm:justify-start'>
 			{games?.map((game) => (
 				<Card
 					key={game?.id}
-					width={164}
-					height={164}
 					src={game?.src}
 					alt={game?.name}
 					gameId={game?.id}
