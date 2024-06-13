@@ -9,3 +9,9 @@ export interface CardProps {
 	alt: string
 	gameId: string
 }
+
+export interface GameProps {
+	id: string
+	name: string
+	src: string
+}
