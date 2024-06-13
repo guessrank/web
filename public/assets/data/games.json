@@ -2,7 +2,161 @@
 	{
 		"id": 1,
 		"src": "/assets/rocket-league.webp",
-		"name": "Rocket League"
+		"name": "Rocket League",
+		"ranks": [
+			{
+				"id": 1,
+				"name": "Bronze",
+				"divisions": [
+					{
+						"id": 1,
+						"name": "I",
+						"image": "/assets/rocket-league/bronze1.webp"
+					},
+					{
+						"id": 2,
+						"name": "II",
+						"image": "/assets/rocket-league/bronze2.webp"
+					},
+					{
+						"id": 3,
+						"name": "III",
+						"image": "/assets/rocket-league/bronze3.webp"
+					}
+				]
+			},
+			{
+				"id": 2,
+				"name": "Silver",
+				"divisions": [
+					{
+						"id": 1,
+						"name": "I",
+						"image": "/assets/rocket-league/silver1.webp"
+					},
+					{
+						"id": 2,
+						"name": "II",
+						"image": "/assets/rocket-league/silver2.webp"
+					},
+					{
+						"id": 3,
+						"name": "III",
+						"image": "/assets/rocket-league/silver3.webp"
+					}
+				]
+			},
+			{
+				"id": 3,
+				"name": "Gold",
+				"divisions": [
+					{
+						"id": 1,
+						"name": "I",
+						"image": "/assets/rocket-league/gold1.webp"
+					},
+					{
+						"id": 2,
+						"name": "II",
+						"image": "/assets/rocket-league/gold2.webp"
+					},
+					{
+						"id": 3,
+						"name": "III",
+						"image": "/assets/rocket-league/gold3.webp"
+					}
+				]
+			},
+			{
+				"id": 4,
+				"name": "Platinum",
+				"divisions": [
+					{
+						"id": 1,
+						"name": "I",
+						"image": "/assets/rocket-league/platinum1.webp"
+					},
+					{
+						"id": 2,
+						"name": "II",
+						"image": "/assets/rocket-league/platinum2.webp"
+					},
+					{
+						"id": 3,
+						"name": "III",
+						"image": "/assets/rocket-league/platinum3.webp"
+					}
+				]
+			},
+			{
+				"id": 5,
+				"name": "Diamond",
+				"divisions": [
+					{
+						"id": 1,
+						"name": "I",
+						"image": "/assets/rocket-league/diamond1.webp"
+					},
+					{
+						"id": 2,
+						"name": "II",
+						"image": "/assets/rocket-league/diamond2.webp"
+					},
+					{
+						"id": 3,
+						"name": "III",
+						"image": "/assets/rocket-league/diamond3.webp"
+					}
+				]
+			},
+			{
+				"id": 6,
+				"name": "Champion",
+				"divisions": [
+					{
+						"id": 1,
+						"name": "I",
+						"image": "/assets/rocket-league/champion1.webp"
+					},
+					{
+						"id": 2,
+						"name": "II",
+						"image": "/assets/rocket-league/champion2.webp"
+					},
+					{
+						"id": 3,
+						"name": "III",
+						"image": "/assets/rocket-league/champion3.webp"
+					}
+				]
+			},
+			{
+				"id": 7,
+				"name": "Grand Champion",
+				"divisions": [
+					{
+						"id": 1,
+						"name": "I",
+						"image": "/assets/rocket-league/grand-champion1.webp"
+					},
+					{
+						"id": 2,
+						"name": "II",
+						"image": "/assets/rocket-league/grand-champion2.webp"
+					},
+					{
+						"id": 3,
+						"name": "III",
+						"image": "/assets/rocket-league/grand-champion3.webp"
+					}
+				]
+			},
+			{
+				"id": 8,
+				"name": "Supersonic Legend",
+				"divisions": []
+			}
+		]
 	},
 	{
 		"id": 2,
