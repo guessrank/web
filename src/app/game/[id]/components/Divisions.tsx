@@ -7,10 +7,12 @@ export default function Divisions({
 	divisions: DivisionProps[]
 }) {
 	return (
-		<ul className='flex gap-5 items-center'>
+		<ul className='flex gap-5 flex-wrap min-w-72 justify-center'>
 			{divisions?.map((division) => (
-				<li key={division.id}>
-					<p>{division.name}</p>
+				<li
+					key={division.id}
+					className='flex flex-col items-center'>
+					<p className='text-center text-nowrap'>{division.name}</p>
 					<div className='relative size-20'>
 						<Image
 							src={division.image}

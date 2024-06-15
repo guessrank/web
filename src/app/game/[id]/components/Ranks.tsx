@@ -3,7 +3,7 @@ import Rank from './Rank'
 
 export default function Ranks({ ranks }: { ranks: RankProps[] }) {
 	return (
-		<ul className='flex gap-8 w-full flex-wrap justify-center'>
+		<ul className='flex gap-8 w-full flex-wrap justify-center relative'>
 			{ranks?.map((rank) => (
 				<Rank
 					key={rank.id}

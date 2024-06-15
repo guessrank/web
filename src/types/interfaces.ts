@@ -34,3 +34,6 @@ export interface LogoProps {
 	stroke?: string
 	fill?: string
 }
+
+export interface ButtonProps
+	extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
