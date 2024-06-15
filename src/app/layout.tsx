@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
-import Footer from '@/components/footer'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
 	title: 'GuessRank',
