@@ -11,17 +11,17 @@
 				"divisions": [
 					{
 						"id": 1,
-						"name": "I",
+						"name": "Bronze I",
 						"image": "/assets/rocket-league/bronze-1.webp"
 					},
 					{
 						"id": 2,
-						"name": "II",
+						"name": "Bronze II",
 						"image": "/assets/rocket-league/bronze-2.webp"
 					},
 					{
 						"id": 3,
-						"name": "III",
+						"name": "Bronze III",
 						"image": "/assets/rocket-league/bronze-3.webp"
 					}
 				]
@@ -33,17 +33,17 @@
 				"divisions": [
 					{
 						"id": 1,
-						"name": "I",
+						"name": "Silver I",
 						"image": "/assets/rocket-league/silver-1.webp"
 					},
 					{
 						"id": 2,
-						"name": "II",
+						"name": "Silver II",
 						"image": "/assets/rocket-league/silver-2.webp"
 					},
 					{
 						"id": 3,
-						"name": "III",
+						"name": "Silver III",
 						"image": "/assets/rocket-league/silver-3.webp"
 					}
 				]
@@ -55,17 +55,17 @@
 				"divisions": [
 					{
 						"id": 1,
-						"name": "I",
+						"name": "Gold I",
 						"image": "/assets/rocket-league/gold-1.webp"
 					},
 					{
 						"id": 2,
-						"name": "II",
+						"name": "Gold II",
 						"image": "/assets/rocket-league/gold-2.webp"
 					},
 					{
 						"id": 3,
-						"name": "III",
+						"name": "Gold III",
 						"image": "/assets/rocket-league/gold-3.webp"
 					}
 				]
@@ -77,17 +77,17 @@
 				"divisions": [
 					{
 						"id": 1,
-						"name": "I",
+						"name": "Platinum I",
 						"image": "/assets/rocket-league/platinum-1.webp"
 					},
 					{
 						"id": 2,
-						"name": "II",
+						"name": "Platinum II",
 						"image": "/assets/rocket-league/platinum-2.webp"
 					},
 					{
 						"id": 3,
-						"name": "III",
+						"name": "Platinum III",
 						"image": "/assets/rocket-league/platinum-3.webp"
 					}
 				]
@@ -99,17 +99,17 @@
 				"divisions": [
 					{
 						"id": 1,
-						"name": "I",
+						"name": "Diamond I",
 						"image": "/assets/rocket-league/diamond-1.webp"
 					},
 					{
 						"id": 2,
-						"name": "II",
+						"name": "Diamond II",
 						"image": "/assets/rocket-league/diamond-2.webp"
 					},
 					{
 						"id": 3,
-						"name": "III",
+						"name": "Diamond III",
 						"image": "/assets/rocket-league/diamond-3.webp"
 					}
 				]
@@ -121,17 +121,17 @@
 				"divisions": [
 					{
 						"id": 1,
-						"name": "I",
+						"name": "Campion I",
 						"image": "/assets/rocket-league/champion-1.webp"
 					},
 					{
 						"id": 2,
-						"name": "II",
+						"name": "Campion II",
 						"image": "/assets/rocket-league/champion-2.webp"
 					},
 					{
 						"id": 3,
-						"name": "III",
+						"name": "Campion III",
 						"image": "/assets/rocket-league/champion-3.webp"
 					}
 				]
@@ -143,17 +143,17 @@
 				"divisions": [
 					{
 						"id": 1,
-						"name": "I",
+						"name": "Grand Champion I",
 						"image": "/assets/rocket-league/grand-champion-1.webp"
 					},
 					{
 						"id": 2,
-						"name": "II",
+						"name": "Grand Champion II",
 						"image": "/assets/rocket-league/grand-champion-2.webp"
 					},
 					{
 						"id": 3,
-						"name": "III",
+						"name": "Grand Champion III",
 						"image": "/assets/rocket-league/grand-champion-3.webp"
 					}
 				]
@@ -161,14 +161,7 @@
 			{
 				"id": 8,
 				"name": "Supersonic Legend",
-				"image": "/assets/rocket-league/supersonic-legend.webp",
-				"divisions": [
-					{
-						"id": 1,
-						"name": "",
-						"image": "/assets/rocket-league/supersonic-legend.webp"
-					}
-				]
+				"image": "/assets/rocket-league/supersonic-legend.webp"
 			}
 		]
 	},
