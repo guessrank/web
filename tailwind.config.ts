@@ -8,13 +8,22 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-conic':
-					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-			},
 			maxWidth: {
 				layout: '1300px',
+			},
+			colors: {
+				dark: '#0E1217',
+				shark: '#1C1F26',
+				'rock-blue': '#9EA9C3',
+				manatee: '#828BA2',
+				tuna: '#2D323A',
+				'ghost-white': '#F5F8FC',
+				white: '#FFFFFF',
+				'white-smoke': '#F1F2F3',
+				'white-gallery': '#E9EAEB',
+				raven: '#767B87',
+				sunglow: '#FFB114',
+				amber: '#FFC412',
 			},
 		},
 	},
