@@ -13,7 +13,7 @@ export default function Home() {
 						/>
 						<h1 className='text-4xl md:text-5xl'>GuessRank.xyz</h1>
 					</div>
-					<h2 className='text-xl md:text-2xl text-center'>
+					<h2 className='text-xl md:text-2xl text-center text-gray-100'>
 						Select a game to start guessing
 					</h2>
 				</header>

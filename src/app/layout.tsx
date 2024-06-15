@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import Footer from '@/components/Footer'
+import { ViewTransitions } from 'next-view-transitions'
 
 export const metadata: Metadata = {
 	title: 'GuessRank',
@@ -14,11 +15,13 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='en'>
-			<body className='bg-gray-950 text-white'>
-				{children}
-				<Footer />
-			</body>
-		</html>
+		<ViewTransitions>
+			<html lang='en'>
+				<body className='bg-gray-950 text-white'>
+					{children}
+					<Footer />
+				</body>
+			</html>
+		</ViewTransitions>
 	)
 }
