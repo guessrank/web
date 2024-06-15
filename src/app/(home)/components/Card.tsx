@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Card({ src, alt, gameId }: CardProps) {
 	return (
-		<div className='flex'>
+		<div className='flex hover:scale-105 hover:opacity-80 duration-200'>
 			<Link
 				href={`/game/${gameId}`}
 				className='relative w-screen max-w-52 min-h-64'>
