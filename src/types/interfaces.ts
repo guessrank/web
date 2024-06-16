@@ -25,6 +25,7 @@ export interface GameProps {
 	id: string
 	name: string
 	src: string
+	description: string
 	ranks: RankProps[]
 }
 
