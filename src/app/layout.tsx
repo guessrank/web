@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import { ViewTransitions } from 'next-view-transitions'
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
 		<ViewTransitions>
 			<html lang='en'>
 				<body className='bg-dark text-white'>
+					<Header />
 					{children}
 					<Footer />
 				</body>
