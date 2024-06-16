@@ -28,7 +28,7 @@ export default function Rank({ id, name, image, divisions }: RankProps) {
 					ref={modalRef}>
 					<div className='flex gap-5 items-center flex-col justify-center'>
 						<header className='flex'>
-							<p>Divisiones</p>
+							<p>Divisions</p>
 							<button
 								className='right-4 top-2 absolute hover:text-amber duration-200'
 								onClick={handleShowDivisions}>

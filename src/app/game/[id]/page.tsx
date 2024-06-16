@@ -22,7 +22,7 @@ export default async function GamePage({
 					href: '/',
 				}}
 				customClassName='sm:absolute left-5 top-5 max-w-max'>
-				Volver al inicio
+				Back to home
 			</LinkButton>
 			<section className='w-full max-w-layout flex justify-center items-center flex-col gap-10'>
 				<h1 className='text-5xl font-bold w-full text-center'>{game?.name}</h1>
