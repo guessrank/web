@@ -3,6 +3,7 @@
 		"id": "rocketleague",
 		"src": "/assets/rocket-league.webp",
 		"name": "Rocket League",
+		"description": "Guess the Rank of Players in Rocket League: Can You Determine Their Skill Level?",
 		"ranks": [
 			{
 				"id": 1,
