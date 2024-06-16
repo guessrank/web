@@ -31,7 +31,9 @@ export default async function GamePage({
 				<Ranks ranks={game?.ranks} />
 			</section>
 			<section className='flex gap-5 justify-center w-full'>
-				<Button>Report video</Button>
+				<Button customClassName='!bg-shark text-white border border-transparent hover:border-sunglow'>
+					Report video
+				</Button>
 				<LinkButton
 					props={{
 						href: `/game/${game.id}/upload`,
