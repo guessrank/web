@@ -36,5 +36,11 @@ export interface LogoProps {
 	fill?: string
 }
 
+export interface DivisionsModalProps {
+	modalRef: React.RefObject<HTMLDivElement>
+	divisions: DivisionProps[]
+	handleShowDivisions: () => void
+}
+
 export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
