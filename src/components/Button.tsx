@@ -17,9 +17,9 @@ export default function Button({
 	return (
 		<ButtonLayout
 			props={{
-				className,
 				...props,
-			}}>
+			}}
+			className={className}>
 			{children}
 		</ButtonLayout>
 	)
