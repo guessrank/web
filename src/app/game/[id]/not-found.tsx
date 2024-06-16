@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import LinkButton from '@/components/LinkButton'
 
 export default function GameNotFound() {
 	return (
@@ -7,11 +7,12 @@ export default function GameNotFound() {
 			<p className='text-lg text-center'>
 				The game you&apos;re looking for doesn&apos;t exist.
 			</p>
-			<Link
-				href='/'
-				className='text-lg text-blue-500 underline cursor-pointer'>
-				Go back home
-			</Link>
+			<LinkButton
+				props={{
+					href: '/',
+				}}>
+				Back to home
+			</LinkButton>
 		</main>
 	)
 }
