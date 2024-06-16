@@ -1,6 +1,6 @@
 [
 	{
-		"id": 1,
+		"id": "rocketleague",
 		"src": "/assets/rocket-league.webp",
 		"name": "Rocket League",
 		"ranks": [
@@ -166,7 +166,7 @@
 		]
 	},
 	{
-		"id": 2,
+		"id": "valorant",
 		"src": "/assets/valorant.webp",
 		"name": "Valorant"
 	}
