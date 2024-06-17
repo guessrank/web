@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import { ViewTransitions } from 'next-view-transitions'
+import QueryProvider from '@/providers/QueryProvider'
 
 export const metadata: Metadata = {
 	title: 'GuessRank',
@@ -19,9 +20,11 @@ export default function RootLayout({
 		<ViewTransitions>
 			<html lang='en'>
 				<body className='bg-dark text-white'>
-					<Header />
-					{children}
-					<Footer />
+					<QueryProvider>
+						<Header />
+						{children}
+						<Footer />
+					</QueryProvider>
 				</body>
 			</html>
 		</ViewTransitions>
