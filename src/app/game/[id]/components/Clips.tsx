@@ -11,9 +11,11 @@ export default function Clips({
 	}
 }) {
 	const { useClipQuery } = useGame()
-	const { data, isLoading } = useClipQuery(params.id)
+	const { data, isLoading, isSuccess } = useClipQuery(params.id)
 
 	if (isLoading) <Spinner />
+	if (!isSuccess)
+		return <h2>Services are currently unavailable. Please try again later.</h2>
 	if (!data.body.length) return <h2>No clips found</h2>
 
 	const randomClip = data.body[Math.floor(Math.random() * data.body.length)]
