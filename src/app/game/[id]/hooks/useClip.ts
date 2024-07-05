@@ -8,6 +8,7 @@ const useClip = () => {
 		useQuery({
 			queryKey: ['game', id],
 			queryFn: () => gameApi.get(id),
+			refetchOnMount: false,
 		})
 
 	const prefetchClipsQuery = async (id: string) => {
