@@ -29,6 +29,17 @@ export interface GameProps {
 	ranks: RankProps[]
 }
 
+export interface GamePageProps {
+	params: {
+		id: string
+	}
+}
+
+export interface GamePageMetadataProps {
+	title: string
+	description: string
+}
+
 export interface LogoProps {
 	width: number
 	height: number

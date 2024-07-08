@@ -4,28 +4,26 @@ import Button from '@/components/Button'
 import LinkButton from '@/components/LinkButton'
 import Clips from './components/Clips'
 import useGame from './hooks/useGame'
+import { gameApi } from '@/services/gameService'
+import type { GamePageProps } from '@/types/interfaces'
+import type { GamePageMetadataProps } from '@/types/interfaces'
 
-// export	async function generateMetadata() {
-// 	const { getGameById } = useGame()
-// 		const game = await getGameById(params.id)
-// 		if (!game) return { title: 'Not found' }
-// 		console.log(game?.[0]?.name)
-// 		return {
-// 			title: game?.[0]?.name,
-// 			description: game?.[0]?.description,
-// 		}
-// 	}
-
-export default async function GamePage({
+export async function generateMetadata({
 	params,
-}: {
-	params: {
-		id: string
+}: GamePageProps): Promise<GamePageMetadataProps> {
+	const { body } = await gameApi.get(params.id)
+	if (body.length === 0) return { title: 'Not found', description: '' }
+	const game = body[0]
+	return {
+		title: game?.name + ' | GuessRank.xyz',
+		description: game?.description,
 	}
-}) {
+}
+
+export default async function GamePage({ params }: GamePageProps) {
 	const { getGameById } = useGame()
 	const game = await getGameById(params.id)
-	if (!game) return notFound()
+	if (game.length === 0) notFound()
 
 	return (
 		<section className='w-full max-w-layout flex justify-center items-center flex-col gap-10'>
