@@ -1,6 +1,8 @@
 'use client'
 import useClipsStore from '@/store/clips.store'
 import type { Clip } from '@/types/interfaces'
+import useClip from '../hooks/useClip'
+
 
 export default function Clips({ clips }: { clips: Clip[] }) {
 	const setClips = useClipsStore((state) => state.setClips)

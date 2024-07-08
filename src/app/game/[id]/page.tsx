@@ -8,6 +8,7 @@ import useClip from './hooks/useClip'
 import type { GamePageProps } from '@/types/interfaces'
 import type { GamePageMetadataProps } from '@/types/interfaces'
 import { gameService } from '@/services/gameService'
+import useRankStore from '@/store/rank.store'
 
 export async function generateMetadata({
 	params,
@@ -28,6 +29,7 @@ export default async function GamePage({ params }: GamePageProps) {
 	if (!game) return notFound()
 	const res = await getClipsById(params.id)
 	let clips = shuffleClips(res)
+
 	return (
 		<section className='w-full max-w-layout flex justify-center items-center flex-col gap-10'>
 			<h1 className='text-4xl font-bold w-full text-center'>{game?.name}</h1>

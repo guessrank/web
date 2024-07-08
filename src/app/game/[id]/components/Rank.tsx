@@ -2,10 +2,17 @@
 import Image from 'next/image'
 import { RankProps } from '@/types/interfaces'
 import useRank from '../hooks/useRank'
+import useRankStore from '@/store/rank.store'
 import DivisionsModal from './DivisionsModal'
 
 export default function Rank({ level, name, imageSrc, divisions }: RankProps) {
 	const { handleShowDivisions, showDivisions, modalRef } = useRank()
+	const { setRank } = useRankStore()
+
+	const handleClick = () => {
+		setRank(level)
+		handleShowDivisions()
+	}
 
 	return (
 		<li
@@ -14,7 +21,7 @@ export default function Rank({ level, name, imageSrc, divisions }: RankProps) {
 			<p>{name}</p>
 			<div
 				className='relative size-20 cursor-pointer'
-				onClick={handleShowDivisions}>
+				onClick={handleClick}>
 				<Image
 					src={imageSrc}
 					alt={name}
