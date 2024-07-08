@@ -18,15 +18,15 @@ export interface CardProps {
 }
 
 export interface DivisionProps {
-	id: number
+	level: number
 	name: string
-	image: string
+	imageSrc: string
 }
 
 export interface RankProps {
-	id: number
+	level: number
 	name: string
-	image: string
+	imageSrc: string
 	divisions: DivisionProps[]
 }
 

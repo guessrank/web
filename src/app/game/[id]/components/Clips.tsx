@@ -1,30 +1,26 @@
+'use client'
+import useClipsStore from '@/store/clips.store'
+import type { Clip } from '@/types/interfaces'
 import useClip from '../hooks/useClip'
 
-export default async function Clips({
-	params,
-}: {
-	params: {
-		id: string
-	}
-}) {
-	const { getClipsById } = useClip()
-	const res = await getClipsById(params?.id)
-	const randomClip = res?.body[Math.floor(Math.random() * res?.body?.length)]
+export default function Clips({ clips }: { clips: Clip[] }) {
+	const setClips = useClipsStore((state) => state.setClips)
+	setClips(clips)
 
-	if (res?.body?.length < 1) return <h2>No clips found</h2>
+	let currentClip = clips[0]
 
 	return (
 		<div className='flex justify-center items-center flex-col gap-5'>
 			<h2 className='text-2xl font-bold text-center'>
-				Found {res.options.total} clips
+				Showing {currentClip?.uniqueId}
 			</h2>
 			<iframe
-				src={randomClip?.url}
+				src=''
 				className='w-[800px] h-[400px]'
 				allowFullScreen
 				loading='lazy'
-				title={randomClip?.gameId}
-				id={randomClip?.uniqueId}
+				title=''
+				id=''
 			/>
 		</div>
 	)

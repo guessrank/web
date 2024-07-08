@@ -4,7 +4,7 @@ const useGame = () => {
 	const getGameById = async (id: string) => {
 		const res = await gameService.get(id)
 		const game = res?.body
-		return game
+		return game[0]
 	}
 
 	const getAllGames = async () => {

@@ -4,14 +4,15 @@ import Button from '@/components/Button'
 import LinkButton from '@/components/LinkButton'
 import Clips from './components/Clips'
 import useGame from './hooks/useGame'
-import { clipService } from '@/services/clipService'
+import useClip from './hooks/useClip'
 import type { GamePageProps } from '@/types/interfaces'
 import type { GamePageMetadataProps } from '@/types/interfaces'
+import { gameService } from '@/services/gameService'
 
 export async function generateMetadata({
 	params,
 }: GamePageProps): Promise<GamePageMetadataProps> {
-	const { body } = await clipService.getClips(params.id)
+	const { body } = await gameService.get(params.id)
 	if (body.length === 0) return { title: 'Not found', description: '' }
 	const game = body[0]
 	return {
@@ -22,14 +23,16 @@ export async function generateMetadata({
 
 export default async function GamePage({ params }: GamePageProps) {
 	const { getGameById } = useGame()
+	const { getClipsById, shuffleClips } = useClip()
 	const game = await getGameById(params.id)
-	if (game.length === 0) notFound()
-
+	if (!game) return notFound()
+	const res = await getClipsById(params.id)
+	let clips = shuffleClips(res)
 	return (
 		<section className='w-full max-w-layout flex justify-center items-center flex-col gap-10'>
 			<h1 className='text-4xl font-bold w-full text-center'>{game?.name}</h1>
 			<section className='w-full flex justify-center'>
-				<Clips params={params} />
+				<Clips clips={clips} />
 			</section>
 			<section className='flex justify-center w-full'>
 				<Ranks ranks={game?.ranks} />
@@ -40,7 +43,7 @@ export default async function GamePage({ params }: GamePageProps) {
 				</Button>
 				<LinkButton
 					props={{
-						href: `/game/${game.id}/upload`,
+						href: `/game/${game?.id}/upload`,
 					}}>
 					Upload a clip
 				</LinkButton>

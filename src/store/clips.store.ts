@@ -4,6 +4,8 @@ import type { Clip } from '@/types/interfaces'
 
 type ClipState = {
 	clips: Clip[]
+	setClips: (clips: Clip[]) => void
+	removeClip: (clip: Clip) => void
 }
 
 const useClipsStore = create<ClipState>()(

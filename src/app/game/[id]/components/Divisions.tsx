@@ -10,12 +10,12 @@ export default function Divisions({
 		<ul className='flex gap-5 flex-wrap min-w-72 justify-center'>
 			{divisions?.map((division) => (
 				<li
-					key={division.id}
+					key={division.level}
 					className='flex flex-col items-center'>
 					<p className='text-center text-nowrap'>{division.name}</p>
 					<div className='relative size-20'>
 						<Image
-							src={division.image}
+							src={division.imageSrc}
 							alt={division.name}
 							fill
 							className='hover:scale-105 duration-200'
