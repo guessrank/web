@@ -1,19 +1,4 @@
-import getGameById from '@/utils/getGameById'
 import LinkButton from '@/components/LinkButton'
-import type { Metadata } from 'next'
-
-type Props = {
-	params: { id: string }
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-	const game = await getGameById({ id: params.id })
-	if (!game) return { title: 'Not found' }
-	return {
-		title: game.name,
-		description: game.description,
-	}
-}
 
 export default function GameLayout({
 	children,
