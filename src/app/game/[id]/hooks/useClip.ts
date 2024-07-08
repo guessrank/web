@@ -1,8 +1,8 @@
-import { gameApi } from '@/services/gameService'
+import { clipService } from '@/services/clipService'
 
 const useClip = () => {
 	const getClipsById = async (id: string) => {
-		const res = await gameApi.getClips(id)
+		const res = await clipService.getClips(id)
 		return res
 	}
 

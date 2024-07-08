@@ -1,9 +1,9 @@
-import useGames from '../game/[id]/hooks/useGames'
+import useGame from '@/app/game/[id]/hooks/useGame'
 import Cards from './components/Cards'
 
 export default async function Home() {
-	const { getGames } = useGames()
-	const games = await getGames()
+	const { getAllGames } = useGame()
+	const games = await getAllGames()
 
 	return (
 		<main className='flex flex-col items-center gap-4 p-6 w-full h-full min-h-[calc(100vh-56px)]'>

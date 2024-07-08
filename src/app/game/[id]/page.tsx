@@ -4,14 +4,14 @@ import Button from '@/components/Button'
 import LinkButton from '@/components/LinkButton'
 import Clips from './components/Clips'
 import useGame from './hooks/useGame'
-import { gameApi } from '@/services/gameService'
+import { clipService } from '@/services/clipService'
 import type { GamePageProps } from '@/types/interfaces'
 import type { GamePageMetadataProps } from '@/types/interfaces'
 
 export async function generateMetadata({
 	params,
 }: GamePageProps): Promise<GamePageMetadataProps> {
-	const { body } = await gameApi.get(params.id)
+	const { body } = await clipService.getClips(params.id)
 	if (body.length === 0) return { title: 'Not found', description: '' }
 	const game = body[0]
 	return {
