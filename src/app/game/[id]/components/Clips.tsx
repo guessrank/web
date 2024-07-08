@@ -1,37 +1,30 @@
-'use client'
+import useClip from '../hooks/useClip'
 
-import Spinner from '@/components/Spinner'
-import useGame from '../hooks/useClip'
-
-export default function Clips({
+export default async function Clips({
 	params,
 }: {
 	params: {
 		id: string
 	}
 }) {
-	const { useClipQuery } = useGame()
-	const { data, isLoading, isSuccess } = useClipQuery(params.id)
+	const { getClipsById } = useClip()
+	const res = await getClipsById(params?.id)
+	const randomClip = res?.body[Math.floor(Math.random() * res?.body?.length)]
 
-	if (isLoading) <Spinner />
-	if (!isSuccess)
-		return <h2>Services are currently unavailable. Please try again later.</h2>
-	if (!data.body.length) return <h2>No clips found</h2>
+	if (res?.body?.length < 1) return <h2>No clips found</h2>
 
-	const randomClip = data.body[Math.floor(Math.random() * data.body.length)]
 	return (
 		<div className='flex justify-center items-center flex-col gap-5'>
 			<h2 className='text-2xl font-bold text-center'>
-				Found {data.options.total} clips
+				Found {res.options.total} clips
 			</h2>
-
 			<iframe
-				src={randomClip.url}
+				src={randomClip?.url}
 				className='w-[800px] h-[400px]'
 				allowFullScreen
 				loading='lazy'
-				title={randomClip.gameId}
-				id={randomClip.uniqueId}
+				title={randomClip?.gameId}
+				id={randomClip?.uniqueId}
 			/>
 		</div>
 	)
