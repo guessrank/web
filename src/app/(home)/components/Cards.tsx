@@ -6,10 +6,10 @@ export default function Cards({ games }: { games: GameProps[] }) {
 		<div className='flex flex-wrap gap-4 w-full justify-center sm:justify-start'>
 			{games?.map((game) => (
 				<Card
-					key={game?.id}
-					src={game?.src}
+					key={game?.uniqueId}
+					src={game?.imageSrc}
 					alt={game?.name}
-					gameId={game?.id}
+					gameId={game?.uniqueId}
 				/>
 			))}
 		</div>
