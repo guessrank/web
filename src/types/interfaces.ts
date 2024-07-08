@@ -1,3 +1,12 @@
+export interface Clip {
+	url: string
+	rank: string
+	division: string
+	gameId: string
+	approved: boolean
+	uniqueId: string
+}
+
 export interface ReactNodeProps {
 	children: React.ReactNode
 }
