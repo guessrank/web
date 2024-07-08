@@ -22,9 +22,9 @@ export interface RankProps {
 }
 
 export interface GameProps {
-	id: string
+	uniqueId: string
 	name: string
-	src: string
+	imageSrc: string
 	description: string
 	ranks: RankProps[]
 }
