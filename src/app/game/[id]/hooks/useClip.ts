@@ -4,7 +4,7 @@ import { Clip } from '@/types/interfaces'
 const useClip = () => {
 	const getClipsById = async (id: string) => {
 		const res = await clipService.getClips(id)
-		return res.body?.length === 0 ? [] : res.body
+		return res
 	}
 
 	const shuffleClips = (clips: Clip[]) => {

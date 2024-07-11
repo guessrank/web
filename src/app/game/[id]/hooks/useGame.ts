@@ -2,17 +2,13 @@ import { gameService } from '@/services/gameService'
 
 const useGame = () => {
 	const getGameById = async (id: string) => {
-		const res = await gameService.get(id)
-		const game = res?.body
-		return game[0]
+		const response = await gameService.get(id)
+		return {
+			data: response?.data?.body[0],
+			error: response.error,
+		}
 	}
-
-	const getAllGames = async () => {
-		const res = await gameService.getAll()
-		const games = res?.body
-		return games
-	}
-
+	const getAllGames = async () => await gameService.getAll()
 	return { getGameById, getAllGames }
 }
 

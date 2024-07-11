@@ -5,17 +5,16 @@ import LinkButton from '@/components/LinkButton'
 import Clips from './components/Clips'
 import useGame from './hooks/useGame'
 import useClip from './hooks/useClip'
+import { gameService } from '@/services/gameService'
 import type { GamePageProps } from '@/types/interfaces'
 import type { GamePageMetadataProps } from '@/types/interfaces'
-import { gameService } from '@/services/gameService'
-import useRankStore from '@/store/rank.store'
 
 export async function generateMetadata({
 	params,
 }: GamePageProps): Promise<GamePageMetadataProps> {
-	const { body } = await gameService.get(params.id)
-	if (body.length === 0) return { title: 'Not found', description: '' }
-	const game = body[0]
+	const { data } = await gameService.get(params.id)
+	if (data?.body?.length === 0) return { title: 'Not found', description: '' }
+	const game = data?.body[0]
 	return {
 		title: game?.name + ' | GuessRank.xyz',
 		description: game?.description,
@@ -25,10 +24,17 @@ export async function generateMetadata({
 export default async function GamePage({ params }: GamePageProps) {
 	const { getGameById } = useGame()
 	const { getClipsById, shuffleClips } = useClip()
-	const game = await getGameById(params.id)
+	const { data: game, error } = await getGameById(params.id)
+
+	if (error)
+		return (
+			<h2 className='text-xl md:text-2xl text-center text-gray-100'>
+				{error?.message}
+			</h2>
+		)
 	if (!game) return notFound()
-	const res = await getClipsById(params.id)
-	let clips = shuffleClips(res)
+	const { data: rawClips } = await getClipsById(params.id)
+	let clips = shuffleClips(rawClips?.body)
 
 	return (
 		<section className='w-full max-w-layout flex justify-center items-center flex-col gap-10'>

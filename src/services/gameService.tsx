@@ -1,7 +1,7 @@
-import { api } from '@/helpers'
+import { requestHandler } from '@/utils/requestHandler'
 
 export const gameService = {
 	get: async (id: string) =>
-		await api.get(`/api/v1/games?uniqueId=${id}`).then((res) => res.data),
-	getAll: async () => await api.get(`/api/v1/games`).then((res) => res.data),
+		await requestHandler({ url: `/api/v1/games?uniqueId=${id}` }),
+	getAll: async () => await requestHandler({ url: '/api/v1/games' }),
 }

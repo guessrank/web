@@ -1,8 +1,6 @@
-import { api } from '@/helpers'
+import { requestHandler } from '@/utils/requestHandler'
 
 export const clipService = {
 	getClips: async (id: string) =>
-		await api
-			.get(`/api/v1/clips?gameId=${id}&approved=false`)
-			.then((res) => res.data),
+		await requestHandler({ url: `/api/v1/clips?gameId=${id}&approved=false` }),
 }
