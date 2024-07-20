@@ -1,15 +1,15 @@
-import LogoIcon from './LogoIcon'
+import LogoIcon from '@/components/icons/LogoIcon'
 
-export default function Header() {
+export default function Header(): JSX.Element {
 	return (
-		<header className='flex flex-col gap-6 justify-center items-center'>
-			<div className='flex justify-center items-center gap-4'>
+		<header className='flex flex-col gap-6 justify-center items-center p-4'>
+			<section className='flex justify-center items-center gap-4'>
 				<LogoIcon
-					width={100}
-					height={100}
+					width={64}
+					height={64}
 				/>
-				<h1 className='text-4xl md:text-5xl'>GuessRank.xyz</h1>
-			</div>
+				<h1 className='text-4xl md:text-3xl'>GuessRank.xyz</h1>
+			</section>
 		</header>
 	)
 }

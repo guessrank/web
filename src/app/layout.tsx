@@ -1,32 +1,30 @@
-import type { Metadata } from 'next'
-import '@/styles/globals.css'
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
-import { ViewTransitions } from 'next-view-transitions'
-import QueryProvider from '@/providers/QueryProvider'
+import type { Metadata } from "next";
+import "../styles/globals.css";
+
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-	title: 'GuessRank',
-	description:
-		'Guess the Rank of Players in Games like Valorant, Rocket League, and more!',
-}
+  title: "GuessRank",
+  description: "Guess the Rank of Players in Games like Valorant, Rocket League, and more!",
+  icons: [
+    {
+      url: "/images/logo.svg",
+      origin: "local",
+      search: "favicon",
+      type: "image/svg+xml",
+    }
+  ]
+};
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode
+  children: React.ReactNode;
 }>) {
-	return (
-		<ViewTransitions>
-			<html lang='en'>
-				<body className='bg-dark text-white'>
-					<QueryProvider>
-						<Header />
-						{children}
-						<Footer />
-					</QueryProvider>
-				</body>
-			</html>
-		</ViewTransitions>
-	)
+  return (
+    <html lang="en">
+      <body className="bg-dark text-white">
+        <Header/>{children}</body>
+    </html>
+  );
 }

@@ -1,20 +1,15 @@
-import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
-import { api } from '@/helpers'
+import { AxiosError, AxiosRequestConfig } from 'axios'
+import { api } from '@/helpers/api.helper'
+import type { ResponseDataType } from '@/types/ResponseDataType';
 
-interface ResponseDataProps {
-	message: string
-	body: any
-	options: any
-}
-
-export const requestHandler = async <T, R>(
+export const requestHandler = async <_, R>(
 	config: AxiosRequestConfig,
-): Promise<{ data?: ResponseDataProps; error?: AxiosError<R> }> => {
-	let data: ResponseDataProps | undefined
+): Promise<{ data?: ResponseDataType; error?: AxiosError<R> }> => {
+	let data: ResponseDataType | undefined
 	let error: AxiosError<R> | undefined
 	try {
 		const response = await api(config)
-		data = response.data as ResponseDataProps
+		data = response.data as ResponseDataType
 	} catch (errorInfo) {
 		error = errorInfo as AxiosError<R>
 		if (error?.code === 'ECONNABORTED') error.message = 'Request timeout'

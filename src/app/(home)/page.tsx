@@ -1,26 +1,28 @@
-import useGame from '@/app/game/[id]/hooks/useGame'
-import Cards from './components/Cards'
+import Maintenance from "@/components/Maintenance";
+import Section from "@/components/Section";
+import useGame from "@/hooks/useGame"
+import GameCard from "./components/GameCard";
+import type { GameType } from "@/types/GameType";
 
-export default async function Home() {
-	const { getAllGames } = useGame()
-	const games = await getAllGames()
-
+export default async function Home(): Promise<JSX.Element> {
+    const { getAllGames } = useGame();
+    const { data, error } = await getAllGames();
+    console.log(error)
+    if (error)
+        return <Maintenance/>
 	return (
 		<main className='flex flex-col items-center gap-4 p-6 w-full h-full min-h-[calc(100vh-56px)]'>
-			<section className='max-w-layout w-full flex justify-center flex-col items-center gap-24'>
-				{games?.error ? (
-					<h2 className='text-xl md:text-2xl text-center text-gray-100'>
-						{games?.error?.message}
-					</h2>
-				) : (
-					<>
-						<h2 className='text-xl md:text-2xl text-center text-gray-100'>
-							Select a game to start guessing
-						</h2>
-						<Cards games={games?.data?.body} />
-					</>
-				)}
-			</section>
+			<Section>
+                <ul className='flex flex-wrap gap-4'>
+                    {data?.map((game: GameType, index: number) => (
+                        <GameCard 
+                            key={index}
+                            uniqueId={game.uniqueId}
+                            title={game.name}
+                            source={game.imageSrc}/>
+                    ))}
+                </ul>
+            </Section>
 		</main>
 	)
 }
