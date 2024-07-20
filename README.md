@@ -1,6 +1,4 @@
-## Getting Started
-
-Run the development server:
+## GuessRank Web
 
 ```bash
 npm run dev
