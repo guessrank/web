@@ -13,7 +13,7 @@ export default async function Home(): Promise<JSX.Element> {
 	return (
 		<main className='flex flex-col items-center gap-4 p-6 w-full h-full min-h-[calc(100vh-56px)]'>
 			<Section>
-                <ul className='flex flex-wrap gap-4'>
+                <ul className='flex justify-center flex-wrap gap-4 w-full'>
                     {data?.map((game: GameType, index: number) => (
                         <GameCard 
                             key={index}
