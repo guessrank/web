@@ -4,7 +4,9 @@ import Image from 'next/image'
 
 export default function GameCard({ uniqueId, source, title }: GameCardProps) {
 	return (
-		<li key={uniqueId} className='flex hover:scale-105 hover:opacity-80 duration-200'>
+		<li
+			key={uniqueId}
+			className='flex hover:scale-105 hover:opacity-80 duration-200'>
 			<Link
 				href={`/game/${uniqueId}`}
 				className='relative w-screen max-w-52 min-h-64'>
