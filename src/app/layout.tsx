@@ -26,7 +26,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className='bg-dark text-white'>
 				<Header />
-				<main className='flex flex-col items-center gap-4 p-6 w-full h-full min-h-[calc(100vh-56px)]'>
+				<main className='flex flex-col items-center gap-4 p-6 w-full'>
 					{children}
 				</main>
 			</body>
