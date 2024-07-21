@@ -1,5 +1,3 @@
-'use client'
-
 export default function Loading(): JSX.Element {
 	return (
 		<div className='flex gap-2'>
