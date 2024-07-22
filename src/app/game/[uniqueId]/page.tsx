@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Button from '@/components/Button'
 import Section from '@/components/Section'
 import useGame from '@/hooks/useGame'
-import type { GameProps } from '@/types/props/GameProps'
-import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import type { GameProps } from '@/types/props/GameProps'
 
 export async function generateMetadata(props: GameProps): Promise<Metadata> {
 	const { getGameById } = useGame()
