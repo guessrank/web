@@ -4,8 +4,10 @@ import Button from '@/components/Button'
 export default function NotFound(): JSX.Element {
 	return (
 		<Section>
-			<h1 className='text-4xl font-bold'>404</h1>
-			<p className='text-lg'>Page not found</p>
+			<div className='flex flex-col items-center gap-4'>
+				<h1 className='text-4xl font-bold text-red-700'>404</h1>
+				<p className='text-lg'>This page could not be found</p>
+			</div>
 			<Button href={'/'}>Go back home</Button>
 		</Section>
 	)
