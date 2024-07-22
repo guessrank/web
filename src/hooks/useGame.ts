@@ -6,7 +6,11 @@ const useGame = () => {
 		const response = await gameService.get('ALL')
 		return { data: response.data?.body as GameType[], error: response.error }
 	}
-	return { getAllGames }
+	const getGameById = async (id: string) => {
+		const response = await gameService.get(id)
+		return { data: response.data?.body[0] as GameType, error: response.error }
+	}
+	return { getAllGames, getGameById }
 }
 
 export default useGame
