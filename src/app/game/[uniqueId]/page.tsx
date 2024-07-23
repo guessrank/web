@@ -40,7 +40,9 @@ export default async function Game(props: GameProps): Promise<JSX.Element> {
 					/>
 				</div>
 				<div className='flex gap-2'>
-					<Button href={`/guessing/${game.uniqueId}`}>Start guessing</Button>
+					<Button href={`/guessing/${game.uniqueId}?page=1`}>
+						Start guessing
+					</Button>
 					<Button
 						href='/'
 						type='secondary'>
