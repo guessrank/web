@@ -4,7 +4,9 @@ export interface ClipsBaseState {
 	clips: ClipType[]
 	currentIndex: number
 	current: ClipType | null
-	remove: (index: number) => void
+	remove: () => void
 	setCurrent: (index: number) => void
 	removeAll: () => void
+	setClips: (clips: ClipType[]) => void
+	get: () => ClipType[]
 }
