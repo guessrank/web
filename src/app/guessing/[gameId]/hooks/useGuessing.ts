@@ -29,7 +29,10 @@ const useGuessing = (listClips: ClipType[]) => {
 		replace(newUrl)
 	}
 
-	const nextClip = () => remove()
+	const nextClip = () => {
+		setButtonEnabled(false)
+		remove()
+	}
 	const onLoadYoutubeFrame = () => setButtonEnabled(true)
 
 	return {
