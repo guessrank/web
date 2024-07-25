@@ -1,8 +1,16 @@
+'use client'
 import Button from '@/components/Button'
 import Section from '@/components/Section'
+import useSelectionStore from '@/store/selection'
 import type { NoClipsFoundProps } from '@/types/props/NoClipsFoundProps'
+import { useEffect } from 'react'
 
 export default function NoClipsFound(props: NoClipsFoundProps) {
+	const { setRankLevel, setDivisionLevel } = useSelectionStore()
+	useEffect(() => {
+		setRankLevel(0)
+		setDivisionLevel(0)
+	}, [])
 	return (
 		<Section>
 			<div className='flex flex-col items-center gap-4 text-center'>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import useClipsStore from '@/store/clips'
+import useSelectionStore from '@/store/selection'
 import type { ClipType } from '@/types/ClipType'
 
 const useGuessing = (listClips: ClipType[]) => {
@@ -13,6 +14,7 @@ const useGuessing = (listClips: ClipType[]) => {
 	const remove = useClipsStore((state) => state.remove)
 	const [currentPage, setCurrentPage] = useState(1)
 	const [buttonEnabled, setButtonEnabled] = useState(false)
+	const { rankLevel, divisionLevel } = useSelectionStore()
 
 	useEffect(() => setClips(listClips), [])
 	useEffect(() => {
@@ -30,6 +32,7 @@ const useGuessing = (listClips: ClipType[]) => {
 	}
 
 	const nextClip = () => {
+		if (rankLevel === 0) return
 		setButtonEnabled(false)
 		remove()
 	}

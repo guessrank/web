@@ -16,7 +16,7 @@ export default async function Guessing(props: GuessingProps) {
 	const { data: clips, error } = await getClips(gameId, props.searchParams.page)
 	const { data: game, error: gameError } = await getGameById(gameId)
 	if (error || gameError) return notFound()
-	if (clips.length === 0) return NoClipsFound({ gameId })
+	if (clips.length === 0) return <NoClipsFound gameId={gameId} />
 	return (
 		<Section>
 			<GuessingHeader clips={clips} />

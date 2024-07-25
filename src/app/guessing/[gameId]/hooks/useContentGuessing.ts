@@ -3,7 +3,9 @@ import useSelectionStore from '@/store/selection'
 
 const useContentGuessing = () => {
 	const [isDivisionModalVisible, setIsDivisionModalVisible] = useState(false)
-	const { setRankLevel, setDivisionLevel } = useSelectionStore((state) => state)
+	const { divisionLevel, setRankLevel, setDivisionLevel } = useSelectionStore(
+		(state) => state,
+	)
 
 	const handleRankItemClick = (event: React.MouseEvent) => {
 		setIsDivisionModalVisible(true)
@@ -13,6 +15,7 @@ const useContentGuessing = () => {
 	const handleBackgroundClick = (event: React.MouseEvent) => {
 		event.stopPropagation()
 		setIsDivisionModalVisible(false)
+		if (divisionLevel === 0) setDivisionLevel(1)
 	}
 
 	const handleDivisionModalInnerClick = (event: React.MouseEvent) => {

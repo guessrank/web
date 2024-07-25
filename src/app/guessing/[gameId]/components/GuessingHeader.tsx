@@ -13,8 +13,7 @@ export default function GuessingHeader(
 	)
 	if (clips.length === 0) return <Loading />
 	return (
-		<div className='flex flex-col items-center w-full'>
-			<h1 className='text-3xl font-bold'>{clips[0]?.uniqueId}</h1>
+		<div className='flex flex-col items-center w-full gap-4'>
 			<YoutubeFrame
 				url={clips[0]?.url}
 				title={clips[0]?.uniqueId}
@@ -23,7 +22,7 @@ export default function GuessingHeader(
 			<Button
 				onClick={nextClip}
 				disabled={!buttonEnabled}>
-				Next
+				Submit
 			</Button>
 		</div>
 	)
