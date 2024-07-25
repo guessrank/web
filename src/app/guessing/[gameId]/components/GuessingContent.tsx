@@ -9,6 +9,7 @@ export default function GuessingContent(props: GuessingContentProps) {
 			<ul className='flex flex-col gap-2 sm:flex-row w-full justify-center items-center'>
 				{props.game.ranks.map((rank) => (
 					<RankItem
+						key={rank.level}
 						level={rank.level}
 						name={rank.name}
 						imageSrc={rank.imageSrc}
