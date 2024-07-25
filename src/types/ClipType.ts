@@ -1,7 +1,7 @@
 export interface ClipType {
 	url: string
-	rank: string
-	division: string
+	rankLevel: number
+	divisionLevel: number
 	gameId: string
 	uniqueId: string
 }
