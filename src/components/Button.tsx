@@ -6,6 +6,8 @@ const buttonStyles = {
 		'flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 disabled:bg-black',
 	secondary:
 		'flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200 disabled:opacity-50',
+	danger:
+		'flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm font-medium text-white bg-red-600 hover:bg-red-700 disabled:bg-black',
 }
 
 export default function Button(props: ButtonProps): JSX.Element {
