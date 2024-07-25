@@ -43,6 +43,7 @@ const useGuessing = (listClips: ClipType[]) => {
 		resultFrame.current?.classList.remove('flex')
 	}
 	const nextClip = (resultFrame: React.RefObject<HTMLDivElement>) => () => {
+		if (rankLevel === 0) return
 		resultFrame.current?.classList.remove('hidden')
 		resultFrame.current?.classList.add('flex')
 		if (
@@ -51,7 +52,6 @@ const useGuessing = (listClips: ClipType[]) => {
 		)
 			setResult({ message: 'Correct', status: true, clipRef: clips[0] })
 		else setResult({ message: 'Incorrect', status: false, clipRef: clips[0] })
-		if (rankLevel === 0) return
 		setButtonEnabled(false)
 		remove()
 	}
