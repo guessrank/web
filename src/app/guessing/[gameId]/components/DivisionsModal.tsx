@@ -6,7 +6,7 @@ export default function DivisionsModal(props: DivisionsModalProps) {
 		<div
 			onClick={props.handleBackgroundClick}
 			className='fixed inset-0 flex items-center justify-center z-50 bg-dark bg-opacity-50'>
-			<div className='relative flex flex-col justify-center items-center gap-4 bg-indigo-700 w-full sm:w-80 h-56 p-4'>
+			<div className='relative flex flex-col justify-center items-center gap-4 bg-shark rounded-lg border border-gray-700 w-full sm:w-80 h-56 p-4'>
 				<h2 className='text-2xl text-white'>Please select a division</h2>
 				<ul className='flex flex-wrap gap-2'>
 					{props.divisions.map((division) => (
