@@ -1,12 +1,16 @@
 'use client'
-import useSelectionStore from '@/store/selection'
+import Button from '@/components/Button'
 import type { GameType } from '@/types/GameType'
-import Division from './Division'
-import Rank from './Rank'
+
 interface GuessingFooterProps {
 	game: GameType
 }
 
 export default function GuessingFooter(props: GuessingFooterProps) {
-	return <div className='flex justify-center mt-8'></div>
+	return (
+		<div className='flex justify-center w-full gap-4'>
+			<Button type='danger'> Report Clip</Button>
+			<Button type='secondary'> Upload Clip</Button>
+		</div>
+	)
 }
