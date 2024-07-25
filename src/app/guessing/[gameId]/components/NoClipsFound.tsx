@@ -10,7 +10,7 @@ export default function NoClipsFound(props: NoClipsFoundProps) {
 	useEffect(() => {
 		setRankLevel(0)
 		setDivisionLevel(0)
-	}, [])
+	}, [setRankLevel, setDivisionLevel])
 	return (
 		<Section>
 			<div className='flex flex-col items-center gap-4 text-center'>
