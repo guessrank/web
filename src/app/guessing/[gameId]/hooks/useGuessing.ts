@@ -14,7 +14,7 @@ const useGuessing = (listClips: ClipType[]) => {
 	const remove = useClipsStore((state) => state.remove)
 	const [currentPage, setCurrentPage] = useState(1)
 	const [buttonEnabled, setButtonEnabled] = useState(false)
-	const { rankLevel, divisionLevel } = useSelectionStore()
+	const { rankLevel } = useSelectionStore()
 
 	useEffect(() => setClips(listClips), [])
 	useEffect(() => {
