@@ -9,10 +9,11 @@ import useGame from '@/hooks/useGame'
 import type { GuessingProps } from '@/types/props/GuessingProps'
 
 export default async function Guessing(props: GuessingProps) {
-	const gameId = props.params.gameId
-	if (gameId.length > 15) return notFound()
 	const { getClips } = useClip()
 	const { getGameById } = useGame()
+
+	const gameId = props.params.gameId
+	if (gameId.length > 15) return notFound()
 	const { data: clips, error } = await getClips(gameId, props.searchParams.page)
 	const { data: game, error: gameError } = await getGameById(gameId)
 	if (error || gameError) return notFound()
